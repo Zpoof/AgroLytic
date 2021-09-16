@@ -52,7 +52,7 @@ if tab == "SoilID":
     pred,res = model_predict(image, SoilNet)
     st.header("Predicted type: " + pred + " Soil")
     st.subheader("Crop Reccomendations:   \n" + crops[res])
-else if tab == "CropChoice"
+elif tab == "CropChoice"
   st.title("CropChoice")
   st.header("Find the best crop to grow for your land")
   st.write("")
