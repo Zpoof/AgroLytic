@@ -7,9 +7,9 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
 
-st.image(Image.open('/content/drive/MyDrive/epic.png'))
+st.image(Image.open('epic.png'))
 tab = st.sidebar.radio("Navigation", ['SoilID','CropChoice'])
-model_path = "/content/drive/MyDrive/SoilNet_93_86.h5"
+model_path = "SoilNet_93_86.h5"
 SoilNet = load_model(model_path)
 classes = {0:"Alluvial Soil:-{ Rice,Wheat,Sugarcane,Maize,Cotton,Soyabean,Jute }",1:"Black Soil:-{ Virginia, Wheat , Jowar,Millets,Linseed,Castor,Sunflower} ",2:"Clay Soil:-{ Rice,Lettuce,Chard,Broccoli,Cabbage,Snap Beans }",3:"Red Soil:{ Cotton,Wheat,Pilses,Millets,OilSeeds,Potatoes }"}
 crops = ["Rice  \nWheat  \nSugarcane  \nMaize  \nCotton  \nSoyabean  \nJute", 
