@@ -9,6 +9,7 @@ from PIL import Image
 import joblib
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 st.image(Image.open('epic.png'))
 tab = st.sidebar.radio("Navigation", ['SoilID','CropChoice'])
