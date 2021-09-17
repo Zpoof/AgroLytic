@@ -101,7 +101,7 @@ elif tab == "CropChoice":
     for n in range(len(pred)):
       if pred[n] == 1:
         st.header("Optimal Crop: " + choices[n].title())
-        st.subheader("N: 160")
+        st.subheader("Nutrients Recommended:   \nN: 160")
         st.subheader("P: 50")
         st.subheader("K: 390")
 
