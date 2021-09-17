@@ -79,7 +79,11 @@ elif tab == "Home 🏠":
   st.title("Home")
   st.header("Welcome to your Agrolytic")
   st.map()
-  st.header("//Weather Info Here")
+  st.header("Weather Info: ")
+  st.subheader("Time        : 19:10")
+  st.subheader("Temperature : 31.4 C")
+  st.subheader("Wind Speed  : 2.3 Km/h W")
+  st.subheader("Humidity    : 21%")
     
 elif tab == "CropChoice 🌽":
   st.title("CropChoice")
