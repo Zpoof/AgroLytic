@@ -6,11 +6,14 @@ import requests, json
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
+import joblib
+from sklearn.tree import DecisionTreeRegressor
 
 st.image(Image.open('epic.png'))
 tab = st.sidebar.radio("Navigation", ['SoilID','CropChoice'])
 model_path = "SoilNet_93_86.h5"
 SoilNet = load_model(model_path)
+CropChoice = joblib.load("CropChoice.joblib.pkl")
 classes = {0:"Alluvial Soil:-{ Rice,Wheat,Sugarcane,Maize,Cotton,Soyabean,Jute }",1:"Black Soil:-{ Virginia, Wheat , Jowar,Millets,Linseed,Castor,Sunflower} ",2:"Clay Soil:-{ Rice,Lettuce,Chard,Broccoli,Cabbage,Snap Beans }",3:"Red Soil:{ Cotton,Wheat,Pilses,Millets,OilSeeds,Potatoes }"}
 crops = ["Rice  \nWheat  \nSugarcane  \nMaize  \nCotton  \nSoyabean  \nJute", 
 "Wheat  \nJowar  \nMillets  \nLinseed  \nCastor  \nSunflower", "Rice  \nLettuce  \nChard  \nBroccoli  \nCabbage  \nSnap Beans", "Cotton  \nWheat  \nPulses  \nMillets  \nOil Seeds  \nPotatoes"]
@@ -56,5 +59,11 @@ elif tab == "CropChoice":
   st.title("CropChoice")
   st.header("Find the best crop to grow for your land")
   st.write("")
+
+  x = []
+  temp = st.slider("Temperature", 0, 50, 20, 0.2)
+  humid = st.slider("Humidity", 0, 100, 50, 0.2)
+  ph = st.slider("Ph", 0, 14, 5, 0.1)
+  rainfall = st.slider("Annual Rainfall", 0, 400, 100, 1)
   
 
