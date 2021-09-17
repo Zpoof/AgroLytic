@@ -79,5 +79,5 @@ elif tab == "CropChoice":
     pred = pred.tolist()[0]
     for n in range(len(pred)):
       if pred[n] == 1:
-        st.header("Optimal Crop: " + choice[n])
+        st.header("Optimal Crop: " + choices[n])
 
