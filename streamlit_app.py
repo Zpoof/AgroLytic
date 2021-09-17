@@ -22,6 +22,18 @@ crops = ["Rice  \nWheat  \nSugarcane  \nMaize  \nCotton  \nSoyabean  \nJute",
 
 choices = ['wheat','mungbean','Tea','millet','maize','lentil','jute','cofee','cotton','ground nut','peas','rubber','sugarcane','tobacco','kidney beans','moth beans','coconut','blackgram','adzuki beans','pigeon peas','chick peas','banana','grapes','apple','mango','muskmelon','orange','papaya','watermelon','pomegranate']
 
+data=pd.read_csv('cpdata.csv')
+label= pd.get_dummies(data.label).iloc[: , 1:]
+data= pd.concat([data,label],axis=1)
+data.drop('label', axis=1,inplace=True)
+train=data.iloc[:, 0:4].values
+test=data.iloc[: ,4:].values
+
+X_train,X_test,y_train,y_test=train_test_split(train,test,test_size=0.3)
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+
 def model_predict(image,model):
     print("Predicted")
     #image = load_img(image_path,target_size=(224,224))
@@ -75,7 +87,7 @@ elif tab == "CropChoice":
   x.append(ph)
   x.append(rainfall)
   if st.button("Find Crop"):
-    pred = CropChoice.predict([x])
+    pred = CropChoice.predict(sc.transform([x]))
     pred = pred.tolist()[0]
     for n in range(len(pred)):
       if pred[n] == 1:
