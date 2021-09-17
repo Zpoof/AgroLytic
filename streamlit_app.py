@@ -71,6 +71,7 @@ if tab == "SoilID":
   uploaded_file = st.file_uploader("Upload image of soil")
   if uploaded_file is not None:
     image = Image.open(uploaded_file)
+    st.image(image)
     pred,res = model_predict(image, SoilNet)
     st.header("Predicted type: " + pred + " Soil")
     st.subheader("Crop Reccomendations:   \n" + crops[res])
