@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 st.image(Image.open('epic.png'))
-tab = st.sidebar.radio("Navigation", ['Home','SoilID','CropChoice'])
+tab = st.sidebar.radio("Navigation", ['Home 🏠','SoilID 🌱','CropChoice 🌽'])
 model_path = "SoilNet_93_86.h5"
 
 SoilNet = load_model(model_path)
@@ -64,7 +64,7 @@ def model_predict(image,model):
         
         return "Red", result
 
-if tab == "SoilID":
+if tab == "SoilID 🌱":
   st.title("SoilID")
   st.header("Identify your soil type and get intelligent crop reccomendations")
   st.write("")
@@ -75,13 +75,13 @@ if tab == "SoilID":
     pred,res = model_predict(image, SoilNet)
     st.header("Predicted type: " + pred + " Soil")
     st.subheader("Crop Reccomendations:   \n" + crops[res])
-elif tab == "Home":
+elif tab == "Home 🏠":
   st.title("Home")
   st.header("Welcome to your Agrolytic")
   st.map()
   st.header("//Weather Info Here")
     
-elif tab == "CropChoice":
+elif tab == "CropChoice 🌽":
   st.title("CropChoice")
   st.header("Find the best crop to grow for your land")
   st.write("")
