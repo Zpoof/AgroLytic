@@ -11,9 +11,6 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-[mapbox]
-token = "pk.eyJ1IjoienBvb2YiLCJhIjoiY2t0bnpkbGNvMDFuODJubzQ5cmN2aXdueCJ9.tHwByFUMm_d5AylPR0B-TQ"
-
 st.image(Image.open('epic.png'))
 tab = st.sidebar.radio("Navigation", ['Home','SoilID','CropChoice'])
 model_path = "SoilNet_93_86.h5"
