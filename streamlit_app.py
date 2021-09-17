@@ -61,9 +61,9 @@ elif tab == "CropChoice":
   st.write("")
 
   x = []
-  temp = st.slider("Temperature", 0, 50, 20, 0.2)
-  humid = st.slider("Humidity", 0, 100, 50, 0.2)
-  ph = st.slider("Ph", 0, 14, 5, 0.1)
-  rainfall = st.slider("Annual Rainfall", 0, 400, 100, 1)
+  temp = st.slider("Temperature", 0, 50, 20, step = 0.2)
+  humid = st.slider("Humidity", 0, 100, 50, step = 0.2)
+  ph = st.slider("Ph", 0, 14, 5, step = 0.1)
+  rainfall = st.slider("Annual Rainfall", 0, 400, 100, step = 1)
   
 
