@@ -76,7 +76,7 @@ elif tab == "CropChoice":
   x.append(rainfall)
   if st.button("Find Crop"):
     pred = CropChoice.predict([x])
-    pred = pred[1]
+    pred = pred.tolist[0]
     for n in range(len(pred)):
       if pred[n] == 1:
         st.header("Optimal Crop: " + choice[n])
