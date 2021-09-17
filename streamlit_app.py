@@ -8,6 +8,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
 import joblib
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
 
 st.image(Image.open('epic.png'))
 tab = st.sidebar.radio("Navigation", ['SoilID','CropChoice'])
