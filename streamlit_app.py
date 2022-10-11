@@ -111,6 +111,6 @@ elif tab == "CropChoice 🌽":
         st.subheader("  K: 390")
 elif tab == "Bot Readings🤖":
     st.title("Bot Readings🤖")
-    st.header("Find the best crop to grow for your land")
+    st.image("Moisture.png")
     
 
