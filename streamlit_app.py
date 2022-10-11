@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 st.image(Image.open('epic.png'))
-tab = st.sidebar.radio("Navigation", ['Home 🏠','SoilID 🌱','CropChoice 🌽'])
+tab = st.sidebar.radio("Navigation", ['Home 🏠','SoilID 🌱','CropChoice 🌽', 'Bot Readings🤖'])
 model_path = "SoilNet_93_86.h5"
 
 SoilNet = load_model(model_path)
@@ -109,4 +109,8 @@ elif tab == "CropChoice 🌽":
         st.subheader("  N: 160")
         st.subheader("  P: 50")   
         st.subheader("  K: 390")
+elif tab == "Bot Readings🤖":
+    st.title("Bot Readings🤖")
+    st.header("Find the best crop to grow for your land")
+    
 
